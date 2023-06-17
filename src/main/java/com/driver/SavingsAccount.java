@@ -29,17 +29,21 @@ public class SavingsAccount extends BankAccount{
     }
 
     double finalAmt;
-    private static final double MINIMUM_BALANCE = 0;
+//    private static final double MINIMUM_BALANCE = 0;
 
 
+    private static final double MINIMUM_BALANCE =0;
 
     public SavingsAccount(String name, double balance, double maxWithdrawalLimit, double rate) {
        // super();
         // minimum balance is 0 by default
+//        super(name, balance, MINIMUM_BALANCE);
+//        this.rate = rate;
+//        this.maxWithdrawalLimit = maxWithdrawalLimit;
+
         super(name, balance, MINIMUM_BALANCE);
         this.rate = rate;
         this.maxWithdrawalLimit = maxWithdrawalLimit;
-
 
     }
 
@@ -55,7 +59,8 @@ public class SavingsAccount extends BankAccount{
         else if(amount>getBalance()){
             throw new Exception("Insufficient Balance" );
         }
-        super.withdraw(amount);
+//        super.withdraw(amount);
+    super.withdraw(amount);
     }
 
     public double getSimpleInterest(int years){
