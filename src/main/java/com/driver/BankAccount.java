@@ -89,7 +89,7 @@ public class BankAccount {
     public void deposit(double amount) {
         //add amount to balance
 
-        this.balance += amount;
+        balance += amount;
 
     }
 
@@ -103,11 +103,12 @@ public class BankAccount {
 //            this.balance -= amount;
 //        }
 
-        if(this.balance - amount<minBalance){
-            throw new Exception("Insufficient Balance");
+        if(this.balance-amount>=getMinBalance())
+        {
+            balance=balance-amount;
         }
-        if(amount<= balance){
-            this.balance -= amount;
+        else {
+            throw new Exception("Insufficient Balance");
         }
     }
 
