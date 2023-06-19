@@ -32,7 +32,7 @@ public class SavingsAccount extends BankAccount{
 //    private static final double MINIMUM_BALANCE = 0;
 
 
-    private static final double MINIMUM_BALANCE =0;
+ //   private static final double MINIMUM_BALANCE =0;
 
     public SavingsAccount(String name, double balance, double maxWithdrawalLimit, double rate) {
        // super();
@@ -41,7 +41,7 @@ public class SavingsAccount extends BankAccount{
 //        this.rate = rate;
 //        this.maxWithdrawalLimit = maxWithdrawalLimit;
 
-        super(name, balance, MINIMUM_BALANCE);
+        super(name, balance, 0);
         this.rate = rate;
         this.maxWithdrawalLimit = maxWithdrawalLimit;
 
@@ -65,8 +65,8 @@ public class SavingsAccount extends BankAccount{
 
     public double getSimpleInterest(int years){
         // Return the final amount considering that bank gives simple interest on current amount
-      finalAmt = getBalance() + (getBalance()* rate * years);
-      return finalAmt;
+      return  (getBalance() + (getBalance()* rate * years));
+
     }
 
     public double getCompoundInterest(int times, int years){

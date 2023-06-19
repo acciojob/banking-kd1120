@@ -4,7 +4,7 @@ public class CurrentAccount extends BankAccount{
     String tradeLicenseId; //consists of Uppercase English characters only
 //    private static final double MINIMUM_BALANCE = 5000;
 
-    private  static final double MINIMUM_BALANCE = 5000;
+   // private  static final double MINIMUM_BALANCE = 5000;
     public String getTradeLicenseId() {
         return tradeLicenseId;
     }
@@ -22,7 +22,7 @@ public class CurrentAccount extends BankAccount{
 //            throw new Exception("Insufficient Balance");
 //        }
 
-        super(name, balance, MINIMUM_BALANCE);
+        super(name, balance, 5000);
         this.tradeLicenseId = tradeLicenseId;
         if(balance<5000){
             throw new Exception("Insufficient Balance");
